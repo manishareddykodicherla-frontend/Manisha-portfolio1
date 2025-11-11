@@ -5,16 +5,43 @@ padding: 0;
 margin: 0;
 box-sizing: border-box;
 }
+html{
+    scroll-behavior: smooth;
+}
 li{
     list-style: none; 
 }
 .row{
-    width:800px;
+    /*width:800px;*/
     margin:0 auto;
     
 }
 section:nth-child(even){
     background-color: #f8f8f8;
+}
+a{
+    text-decoration: none;
+    position: relative;
+}
+.link__hover-effect::after{
+  position: absolute;
+  content: "";
+  height:3px;
+  background-color: #1c1d25;
+  width:0;
+  bottom:-3px;
+  right:0;
+
+}
+.link__hover-effect:hover:after{
+    width:100%;
+    left:0;
+}
+.link__hover-effect--black::after{
+ background-color: #1c1d25;
+}
+.link__footer__hover-effect--white::after{
+    background-color: white ;
 }
 /*NAVAGATION*/
 nav{
@@ -32,6 +59,7 @@ nav{
 .nav__link--anchor{
   margin:0 20px;
   text-decoration: none;
+  color:#1c1d25;
 }
 .nav__link--anchor--primary{
     background-color:#6030b1;
@@ -39,9 +67,9 @@ nav{
     color:white;
     padding:5px 16px;
 }
-.nav__link--anchor--primary:hover{
+/*.nav__link--anchor--primary:hover{
     background-color:#5d3eff;
-}
+} */
 .personal__logo{
     color:#6030b1;
     font-size:24px;
@@ -165,15 +193,60 @@ z-index:2;
 .project__explanation{
  position :absolute;
  top: 50%;
-  left: 90px;
-  transform: translateY(100%);
-  max-width: 550px;
+ left: 90px;
+transform: translateY(%);
+max-width: 550px;
   z-index: 3;
-  opacity: 0
-
+ opacity:0;
 }
-.project__tittle
-.project-__sub-tittle
-.project__description-para{
+.project:hover .project__explanation{
+    opacity:1;
+}
+.project__description--link{
+    text-decoration: none;
+    font-size: 20px;
+}
+.project__tittle,
+.project-__sub-tittle,
+.project__description-para,
+.project__description--link{
 color:white;
+}
+footer{
+    background-color: #1c1d25;
+}
+.footer__row{
+ margin-top: 90px;
+ display:flex;
+flex-direction:column;
+align-items: center;
+}
+.footer__logo--img{
+   width:90px;
+   height:90px;
+}
+.footer__social--link{
+    text-decoration: none;
+    color:#ffff;
+      padding :20px;
+}
+.footer__social--links{
+    margin-top: 10px;
+    padding :20px;
+}
+.footer__logo--popper{
+    color: #ffff;
+    position:absolute;
+    right:0;
+    top:40px;
+    opacity:0;
+}
+.footer__anchor{
+    position: relative;
+    margin-bottom: 20px;
+    transition: all 400ms ease;
+}
+.footer__anchor:hover .footer__logo--popper{
+    opacity:1;
+    transform:translateX(60%) ;
 }
